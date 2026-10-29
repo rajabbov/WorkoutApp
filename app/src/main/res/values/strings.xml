@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WorkoutApp</string>
+    <string name="LoginTxt">Tizimga kirish <font color="#FD511E">Signin</font></string>
+</resources>
