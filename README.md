@@ -4,41 +4,40 @@
 [![Language](https://img.shields.io/badge/Language-Java-orange.svg)](https://www.java.com/)
 [![Target SDK](https://img.shields.io/badge/Target%20SDK-35-blue.svg)](https://developer.android.com/)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-24-lightgrey.svg)](https://developer.android.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**WorkoutApp** — bu foydalanuvchilarga kundalik jismoniy mashqlarni rejalashtirish, sog'lom turmush tarzini shakllantirish va har bir mashqni video qo'llanmalar orqali to'g'ri bajarishga yordam beruvchi zamonaviy Android ilova.
-
----
-
-## 📱 Asosiy Xususiyatlar (Key Features)
-
-- **🏃‍♂️ Mashq turlari (Workout Categories):**
-  - **Running (Yugurish)** — chidamlilik va kardio mashqlari
-  - **Stretching (Cho'zilish)** — moslashuvchanlik va tiklanish mashqlari
-  - **Yoga** — tana va ong uyg'unligi uchun mashg'ulotlar
-  - **Strength (Kuch)** — mushaklarni rivojlantirish va quvvat mashqlari
-- **⏱️ Batafsil ma'lumotlar:** Har bir mashg'ulot bo'yicha sarflanadigan kaloriya (Kcal), umumiy davomiylik va mashqlar soni ko'rsatiladi.
-- **🎥 Video qo'llanmalar (YouTube Integration):** Har bir darslik (Lession) uchun maxsus video darsliklar integratsiya qilingan (YouTube ilovasi yoki brauzer orqali avtomatik ochiladi).
-- **✨ Immersive UI:** To'liq ekranga moslashgan (Edge-to-Edge) zamonaviy va chiroyli dizayn.
-- **⚡ Yuqori tezlik:** Native Android (Java) va ViewBinding asosida tezkor ishlash.
+**WorkoutApp** is a modern and intuitive Android fitness application designed to help users organize daily exercise routines, build healthy habits, and practice workouts effectively through integrated video guides.
 
 ---
 
-## 🛠 Texnologiyalar va Kutubxonalar (Tech Stack)
+## 📱 Key Features
 
-| Texnologiya / Kutubxona | Vazifasi |
-|-------------------------|----------|
-| **Java 11**             | Asosiy dasturlash tili |
-| **Android SDK 35**      | Eng so'nggi Android API imkoniyatlari |
-| **ViewBinding**         | Xavfsiz va qulay UI elementlariga bog'lanish |
-| **Glide (v4.16.0)**     | Rasmlarni tezkor va samarali yuklash hamda keshlashtirish |
-| **RecyclerView**        | Gorizontal va vertikal ro'yxatlarni optimallashtirilgan tarzda chiqarish |
-| **AndroidX & Material** | Zamonaviy UI komponentlar va orqaga moslik |
-| **Explicit & Implicit Intents** | Darslarni YouTube yoki brauzerda ochish |
+- **🏃‍♂️ Workout Categories:**
+  - **Running:** Cardio and endurance training
+  - **Stretching:** Flexibility and post-workout recovery routines
+  - **Yoga:** Harmony, posture, and wellness sessions
+  - **Strength:** Muscle building and power workouts
+- **⏱️ Detailed Workout Metrics:** Track estimated calorie burn (Kcal), total duration, and number of exercises for every workout routine.
+- **🎥 Video Lesson Integration (YouTube):** Each lesson includes step-by-step video guidance, seamlessly launching via the YouTube app or web browser fallback.
+- **✨ Immersive UI/UX:** Full-screen edge-to-edge layout (`FLAG_LAYOUT_NO_LIMITS`) with custom vector drawables and gradients.
+- **⚡ High Performance:** Developed natively with Java and ViewBinding for optimal speed and responsiveness.
 
 ---
 
-## 📂 Loyiha Tuzilishi (Project Architecture)
+## 🛠 Tech Stack & Libraries
+
+| Technology / Library | Purpose |
+|----------------------|---------|
+| **Java 11**          | Core programming language |
+| **Android SDK 35**   | Modern Android API features and optimizations |
+| **ViewBinding**      | Safe and performant view interaction |
+| **Glide (v4.16.0)**  | Efficient image loading and memory caching |
+| **RecyclerView**     | Optimized horizontal and vertical list rendering |
+| **AndroidX & Material Components** | Contemporary UI elements and backward compatibility |
+| **Intents (Implicit / Explicit)**  | Seamless external video playback integration |
+
+---
+
+## 📂 Project Architecture
 
 ```
 WorkoutApp/
@@ -46,51 +45,45 @@ WorkoutApp/
 │   ├── src/main/
 │   │   ├── java/com/example/workoutapp/
 │   │   │   ├── Activity/
-│   │   │   │   ├── IntroActivity.java     # Ilovaga kirish oynasi
-│   │   │   │   ├── MainActivity.java      # Asosiy mashqlar ro'yxati
-│   │   │   │   └── WorkoutActivity.java   # Tanlangan mashq tafsilotlari va darslar
+│   │   │   │   ├── IntroActivity.java     # Onboarding & welcome screen
+│   │   │   │   ├── MainActivity.java      # Dashboard with workout categories
+│   │   │   │   └── WorkoutActivity.java   # Workout details & lesson list
 │   │   │   ├── Adapter/
-│   │   │   │   ├── WorkoutAdapter.java    # Gorizontal mashqlar ro'yxati adapteri
-│   │   │   │   └── LessionsAdapter.java   # Mashq darslari adapteri (Video linklar bilan)
+│   │   │   │   ├── WorkoutAdapter.java    # Horizontal categories adapter
+│   │   │   │   └── LessionsAdapter.java   # Lessons adapter with video links
 │   │   │   └── Domain/
-│   │   │       ├── Workout.java           # Mashg'ulot ma'lumotlar modeli
-│   │   │       └── Lession.java           # Darslik ma'lumotlar modeli
-│   │   └── res/                           # Layoutlar, ranglar, drawables va ikonalar
-│   └── build.gradle.kts                   # Ilova darajasidagi konfiguratsiya
+│   │   │       ├── Workout.java           # Workout data model
+│   │   │       └── Lession.java           # Exercise lesson data model
+│   │   └── res/                           # Layouts, drawables, colors, themes
+│   └── build.gradle.kts                   # App-level build configurations
 └── settings.gradle.kts
 ```
 
 ---
 
-## 🚀 O'rnatish va Ishga Tushirish (Getting Started)
+## 🚀 Getting Started
 
-Loyihani kompyuteringizda ishga tushirish uchun quyidagi qadamlarni bajaring:
+Follow these steps to set up and run the project locally:
 
-### Talablar:
-- **Android Studio** (Ladybug / Koala yoki undan yangi versiya)
-- **JDK 11** yoki undan yuqori
-- Android qurilma yoki Emulator (Android 7.0 Nougat - API 24+)
+### Prerequisites:
+- **Android Studio** (Ladybug / Koala or newer recommended)
+- **JDK 11** or higher
+- Android device or Emulator running Android 7.0 (Nougat / API 24) or above
 
-### Qadamlar:
-1. Repozitoriyadan nusxa oling:
+### Installation:
+1. Clone the repository:
    ```bash
    git clone https://github.com/ibrohim2005rajabboyev/WorkoutApp.git
    ```
-2. **Android Studio** dasturini oching.
-3. **Open Project** tugmasini bosib, `WorkoutApp` papkasini tanlang.
-4. Gradle sinxronizatsiyasi tugashini kuting (`Sync Project with Gradle Files`).
-5. Qurilma yoki emulyatorda ilovani ishga tushiring: **Run** (`Shift + F10`).
+2. Open **Android Studio**.
+3. Select **Open Project** and navigate to the cloned `WorkoutApp` folder.
+4. Allow Gradle to download dependencies and sync (`Sync Project with Gradle Files`).
+5. Connect your device or start an emulator, then click **Run** (`Shift + F10`).
 
 ---
 
-## 👨‍💻 Muallif (Author)
+## 👨‍💻 Author
 
 - **Ibrohimjon Rajabboyev**
 - **GitHub:** [@ibrohim2005rajabboyev](https://github.com/ibrohim2005rajabboyev)
 - **Bio:** Mobile App Developer • Android • Kotlin • Flutter • UI/UX
-
----
-
-## 📄 Litsenziya (License)
-
-Ushbu loyiha [MIT License](LICENSE) ostida tarqatiladi.
